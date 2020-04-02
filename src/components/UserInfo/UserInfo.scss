@@ -1,0 +1,26 @@
+.user-info__text {
+  display: flex;
+  flex-direction: column;
+}
+.image-page__actions {
+  .user-info {
+    display: flex;
+    color: white;
+    font-family: 'SF UI Display Light';
+    height: 100%;
+
+    .user-name {
+      font-size: 20px;
+      font-family: 'SF UI Display Light';
+    }
+
+    img {
+      border: 1px solid white;
+      border-radius: 5px;
+      margin: 5px 10px 0px;
+      width: 45px;
+      height: 45px;
+      vertical-align: middle;
+    }
+  }
+}
