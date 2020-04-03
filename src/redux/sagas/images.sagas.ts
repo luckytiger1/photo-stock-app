@@ -4,10 +4,10 @@ import {
   imagesLoaded,
   imagesFailed,
 } from '../actions/fetchImages';
-import pageSelector from '../../selectors/pages-selectors';
+import pageSelector from '../selectors/pages-selectors';
 
 async function fetchImagesData(page: any) {
-  const url = `https://api.unsplash.com/photos/?client_id=i_zzFN2ObiV515beVlFT2zSqgPNUnS2nL9UZD9SqHj4&page=${page}&per_page=30`;
+  const url = `https://api.unsplash.com/photos/?client_id=i_zzFN2ObiV515beVlFT2zSqgPNUnS2nL9UZD9SqHj4&page=${page}&per_page=10`;
   const req = await fetch(url);
   const data = await req.json();
   return data;

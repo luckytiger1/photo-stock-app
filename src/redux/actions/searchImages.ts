@@ -10,6 +10,12 @@ const searchImagesLoaded = (newImages: any) => {
     payload: newImages,
   };
 };
+const searchImagesFailed = (error: any) => {
+  return {
+    type: 'SEARCH_IMAGES_FAILURE',
+    payload: error,
+  };
+};
 
 const searchImages = () => {
   return {
@@ -17,4 +23,9 @@ const searchImages = () => {
   };
 };
 
-export { searchImagesRequest, searchImagesLoaded, searchImages };
+export {
+  searchImagesRequest,
+  searchImagesLoaded,
+  searchImagesFailed,
+  searchImages,
+};

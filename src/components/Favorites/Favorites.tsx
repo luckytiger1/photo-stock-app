@@ -1,9 +1,8 @@
 import React from 'react';
 import './Favorites.scss';
 import GalleryContainer from '../Gallery/GalleryContainer';
-// import GalleryContainer from '../Gallery/GalleryContainer';
 
-export default function Favorites() {
+const Favorites: React.FC = () => {
   return (
     <div className="favorites-container">
       <div className="favorites-title">
@@ -12,4 +11,6 @@ export default function Favorites() {
       <GalleryContainer />
     </div>
   );
-}
+};
+
+export default Favorites;

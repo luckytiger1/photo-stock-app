@@ -13,6 +13,7 @@
 
 .input-field {
   border-bottom: 1px solid;
+
   border-image: linear-gradient(
       to left,
       #000000 0%,
@@ -32,9 +33,10 @@
   margin-bottom: 4px;
   font-family: 'SF UI Display Light';
   font-size: 2rem;
-  background: black;
+  background-color: black;
   line-height: 60px;
   color: white;
+
   &:focus {
     outline: none;
   }

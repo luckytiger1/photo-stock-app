@@ -18,7 +18,7 @@ const HistoryList = ({ searchHistory }: any) => {
   );
 };
 
-const mapStateToProps = ({ imageList: { searchHistory } }: any) => {
+const mapStateToProps = ({ searchList: { searchHistory } }: any) => {
   return {
     searchHistory,
   };

@@ -4,11 +4,11 @@ import {
   searchImagesRequest,
   searchImagesLoaded,
 } from '../actions/searchImages';
-import pageSelector from '../../selectors/pages-selectors';
-import { termSelector } from '../../selectors/images-selectors';
+import pageSelector from '../selectors/pages-selectors';
+import { termSelector } from '../selectors/images-selectors';
 
 async function fetchImagesData(page: any, term: any) {
-  const url = `https://api.unsplash.com/search/?client_id=i_zzFN2ObiV515beVlFT2zSqgPNUnS2nL9UZD9SqHj4&page=${page}&per_page=30&query=${term}`;
+  const url = `https://api.unsplash.com/search/?client_id=i_zzFN2ObiV515beVlFT2zSqgPNUnS2nL9UZD9SqHj4&page=${page}&per_page=10&query=${term}`;
   const req = await fetch(url);
   const data = await req.json();
   return data.photos.results;

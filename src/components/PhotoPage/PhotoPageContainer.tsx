@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import './PhotoPage.scss';
-import { imagePageSelector } from '../../selectors/images-selectors';
+import { imagePageSelector } from '../../redux/selectors/images-selectors';
 import { addToFavorites } from '../../redux/actions/fetchImages';
 import PhotoPage from './PhotoPage';
 

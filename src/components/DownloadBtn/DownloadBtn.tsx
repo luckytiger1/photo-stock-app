@@ -1,6 +1,12 @@
 import React from 'react';
 
-const DownloadBtn = ({ itemClass, link, icon }: any) => {
+type DownLoadBtnProps = {
+  itemClass: string;
+  link: string;
+  icon: string;
+};
+
+const DownloadBtn: React.FC<DownLoadBtnProps> = ({ itemClass, link, icon }) => {
   return (
     <button className={itemClass} type="button">
       <a href={link} download={link} target="_blank" rel="noopener noreferrer">

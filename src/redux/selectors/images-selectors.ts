@@ -1,25 +1,21 @@
 import { createSelector } from 'reselect';
 
 const imageListSelector = (state: any) => state.imageList;
-// const searchImageListSelector = (state: any) => state.searchResults;
+const favoritesListSelector = (state: any) => state.favoritesList;
+const searchImageListSelector = (state: any) => state.searchList;
 
 const imagesSelector = createSelector(
   [imageListSelector],
   (imageList) => imageList.images,
 );
-const searchImagesSelector = createSelector(
-  [imageListSelector],
-  (imageList) => imageList.searchResults,
+const searchResultsSelector = createSelector(
+  [searchImageListSelector],
+  (searchList) => searchList.searchResults,
 );
 
 const termSelector = createSelector(
-  [imageListSelector],
-  (imageList) => imageList.term,
-);
-
-const searchResultsSelector = createSelector(
-  [imageListSelector],
-  (imageList) => imageList.searchResults,
+  [searchImageListSelector],
+  (searchList) => searchList.term,
 );
 
 const imageIsLoadingSelector = createSelector(
@@ -28,13 +24,13 @@ const imageIsLoadingSelector = createSelector(
 );
 
 const favoritesSelector = createSelector(
-  [imageListSelector],
-  (imageList) => imageList.favorites,
+  [favoritesListSelector],
+  (favoritesList) => favoritesList.favorites,
 );
 
 const imagePageSelector = (imageUrlParam: any) =>
   createSelector(
-    [imagesSelector, searchImagesSelector],
+    [imagesSelector, searchResultsSelector],
     (imageList, searchResults) =>
       [...imageList, ...searchResults].find(
         (image: any) => image.id === imageUrlParam,

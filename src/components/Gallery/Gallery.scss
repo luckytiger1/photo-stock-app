@@ -1,5 +1,6 @@
 .gallery-container {
   padding: 20px;
+  min-height: 100vh;
 }
 
 .columns {
@@ -37,7 +38,6 @@
     font-family: 'SF UI Display Light';
     .user-name {
       font-size: 20px;
-      // font-family: 'SF UI Display Light';
     }
     span {
       color: white;
@@ -54,7 +54,6 @@
   &__img {
     width: 100%;
     height: auto;
-    // box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.14);
     border-radius: 5px;
     margin-bottom: 15px;
   }
@@ -79,7 +78,13 @@
     }
   }
 }
+.related-title {
+  font-family: 'SF UI Display Light';
 
+  font-size: 20px;
+  font-weight: 600;
+  padding: 30px 25px 10px;
+}
 .no-results-img {
   display: block;
   max-width: 300px;
