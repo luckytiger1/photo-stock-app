@@ -1,20 +1,21 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import UserInfo from '../UserInfo/UserInfo';
 import likeBtn from './assets/favorites.svg';
-import downloadBtn from './assets/download-btn.svg';
+import downloadBtnIcon from './assets/download-btn.svg';
+import downloadBtnMobile from './assets/download-mobile.svg';
 import DownloadBtn from '../DownloadBtn/DownloadBtn';
 import LikeBtn from '../LikeBtn/LikeBtn';
 import GalleryContainer from '../Gallery/GalleryContainer';
 
 const PhotoPage = ({ image, updateFavorites, toTitleCase, tags }: any) => {
-  console.log(image);
-
+  const isMobile = useMediaQuery({ maxWidth: 550 });
   return (
     <div className="image-page__container">
       <div
         className="image-page__header"
         style={{
-          backgroundImage: `url(${image.urls.full}) `,
+          backgroundImage: !isMobile ? `url(${image.urls.full})` : 'none',
         }}
       >
         <div className="image-page__actions">
@@ -25,12 +26,19 @@ const PhotoPage = ({ image, updateFavorites, toTitleCase, tags }: any) => {
               addToFavorites={() => updateFavorites(image)}
               icon={likeBtn}
             />
-
-            <DownloadBtn
-              itemClass="download-btn"
-              link={image.links.download}
-              icon={downloadBtn}
-            />
+            {isMobile ? (
+              <DownloadBtn
+                itemClass="download-btn"
+                link={image.links.download}
+                icon={downloadBtnMobile}
+              />
+            ) : (
+              <DownloadBtn
+                itemClass="download-btn"
+                link={image.links.download}
+                icon={downloadBtnIcon}
+              />
+            )}
           </div>
         </div>
         <div className="image-page__photo">
@@ -38,7 +46,7 @@ const PhotoPage = ({ image, updateFavorites, toTitleCase, tags }: any) => {
             <img src={image.urls.full} alt="main" />
           </div>
         </div>
-        <div className="image-page__tags text-center">
+        <div className="image-page__tags">
           <span className="title">Related tags</span>
           <div className="tags-container">
             {tags.map((tag: any, index: any) => {

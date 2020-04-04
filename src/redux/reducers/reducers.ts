@@ -2,13 +2,15 @@ import { combineReducers } from 'redux';
 import updateImageList from './image-list';
 import pageReducer from './pages';
 import favoritesListReducer from './favorites-list';
-import searchImagesReducer from './search-images';
+import relatedListReducer from './related-list';
+import tagsReducer from './tags-reducer';
 
 const reducer = combineReducers({
   imageList: updateImageList,
   pages: pageReducer,
   favoritesList: favoritesListReducer,
-  searchList: searchImagesReducer,
+  relatedList: relatedListReducer,
+  tagsList: tagsReducer,
 });
 
 export default reducer;

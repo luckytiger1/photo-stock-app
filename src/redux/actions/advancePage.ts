@@ -3,5 +3,10 @@ const advancePage = () => {
     type: 'ADVANCE_PAGE',
   };
 };
+const resetPage = () => {
+  return {
+    type: 'RESET_PAGE',
+  };
+};
 
-export default advancePage;
+export { advancePage, resetPage };

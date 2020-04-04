@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  page: 0,
+  page: 1,
 };
 
 const pageReducer = (state = INITIAL_STATE, action: any) => {
@@ -8,6 +8,11 @@ const pageReducer = (state = INITIAL_STATE, action: any) => {
       return {
         ...state,
         page: state.page + 1,
+      };
+    case 'RESET_PAGE':
+      return {
+        ...state,
+        page: 1,
       };
     default:
       return state;

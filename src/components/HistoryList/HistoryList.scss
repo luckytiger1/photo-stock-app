@@ -6,4 +6,25 @@
     font-weight: 600;
     color: white;
   }
+  .history-list-container-main {
+    overflow: hidden;
+    max-width: 1000px;
+    min-width: 300px;
+    position: relative;
+    max-height: 20px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20%;
+      height: 100%;
+      background-image: linear-gradient(to right, transparent 10%, black 100%);
+    }
+  }
+  .history-list-container-history {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

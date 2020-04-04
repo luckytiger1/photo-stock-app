@@ -32,12 +32,6 @@ const addToFavorites = (image: any) => {
   };
 };
 
-const mainPageUnloaded = () => {
-  return {
-    type: 'MAIN_PAGE_UNLOADED',
-  };
-};
-
 const fetchImages = () => {
   return {
     type: 'FETCH_IMAGES',
@@ -51,5 +45,4 @@ export {
   fetchImages,
   setTerm,
   addToFavorites,
-  mainPageUnloaded,
 };

@@ -3,12 +3,8 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import './Gallery.scss';
-import {
-  fetchImages,
-  addToFavorites,
-  mainPageUnloaded,
-} from '../../redux/actions/fetchImages';
-import advancePage from '../../redux/actions/advancePage';
+import { fetchImages, addToFavorites } from '../../redux/actions/fetchImages';
+import { advancePage } from '../../redux/actions/advancePage';
 import {
   imagesSelector,
   searchResultsSelector,
@@ -19,7 +15,7 @@ import {
 import pageSelector from '../../redux/selectors/pages-selectors';
 import { searchImages } from '../../redux/actions/searchImages';
 import Gallery, { GalleryProps } from './Gallery';
-// import useInfiniteScroll from './customHooks';
+import relatedImagesSelector from '../../redux/selectors/relatedImages-selectors';
 
 interface GalleryContainerProps extends GalleryProps {
   images: object[];
@@ -44,32 +40,34 @@ const GalleryContainer = ({
   updateFavorites,
   favorites,
   match,
+  relatedImages,
 }: any) => {
   useEffect(() => {
-    if (term) {
+    if (term.length > 0) {
       updateSearchResults();
     } else {
       updateImages();
     }
-  }, [page, updateImages, updateSearchResults, term]);
+  }, [page, updateImages, updateSearchResults, term, match.path]);
 
   let results;
   if (match.path === '/favorites') {
     results = favorites;
+  } else if (match.path === '/:photoId') {
+    results = relatedImages;
   } else {
     results = term ? searchResults : images;
   }
 
   return (
-    <>
-      <Gallery
-        advancePage={updatePage}
-        results={results}
-        loading={loading}
-        updateFavorites={updateFavorites}
-        match={match}
-      />
-    </>
+    <Gallery
+      advancePage={updatePage}
+      results={results}
+      loading={loading}
+      updateFavorites={updateFavorites}
+      match={match}
+      page={page}
+    />
   );
 };
 
@@ -80,6 +78,7 @@ const mapStateToProps = createStructuredSelector({
   term: termSelector,
   loading: imageIsLoadingSelector,
   favorites: favoritesSelector,
+  relatedImages: relatedImagesSelector,
 });
 
 const mapDispatchToProps = {
@@ -87,7 +86,6 @@ const mapDispatchToProps = {
   updateImages: fetchImages,
   updateSearchResults: searchImages,
   updateFavorites: addToFavorites,
-  unloadPage: mainPageUnloaded,
 };
 
 export default withRouter(

@@ -4,7 +4,7 @@ const useInfiniteScroll = (scrollRef: any, dispatch: any) => {
   const scrollObserver = useCallback(
     (node) => {
       new IntersectionObserver((entries) => {
-        entries.forEach((en) => {
+        entries.forEach((en: any) => {
           if (en.intersectionRatio > 0) {
             dispatch();
           }

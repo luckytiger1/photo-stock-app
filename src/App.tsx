@@ -7,13 +7,14 @@ import GalleryContainer from './components/Gallery/GalleryContainer';
 import Favorites from './components/Favorites/Favorites';
 import HistoryPage from './components/HistoryPage/HistoryPage';
 import PhotoPageContainer from './components/PhotoPage/PhotoPageContainer';
+// import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 const App = () => {
   return (
     <div className="App ">
       <Header />
+      {/* <ScrollToTop> */}
       <Switch>
-        {/* <Route component={Header}/> */}
         <Route
           exact
           path="/"
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/history" component={HistoryPage} />
         <Route path="/:photoId" component={PhotoPageContainer} />
       </Switch>
+      {/* </ScrollToTop> */}
     </div>
   );
 };

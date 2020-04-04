@@ -8,12 +8,14 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 import store from './redux/store';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ErrorBoundary>
         <Router>
+          <ScrollToTop />
           <App />
         </Router>
       </ErrorBoundary>

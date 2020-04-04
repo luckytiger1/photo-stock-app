@@ -2,20 +2,19 @@ import { createSelector } from 'reselect';
 
 const imageListSelector = (state: any) => state.imageList;
 const favoritesListSelector = (state: any) => state.favoritesList;
-const searchImageListSelector = (state: any) => state.searchList;
 
 const imagesSelector = createSelector(
   [imageListSelector],
   (imageList) => imageList.images,
 );
 const searchResultsSelector = createSelector(
-  [searchImageListSelector],
-  (searchList) => searchList.searchResults,
+  [imageListSelector],
+  (imageList) => imageList.searchResults,
 );
 
 const termSelector = createSelector(
-  [searchImageListSelector],
-  (searchList) => searchList.term,
+  [imageListSelector],
+  (imageList) => imageList.term,
 );
 
 const imageIsLoadingSelector = createSelector(

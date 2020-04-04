@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setTerm } from '../../redux/actions/fetchImages';
+import { resetPage } from '../../redux/actions/advancePage';
 import './SearchBox.scss';
 import HistoryList from '../HistoryList/HistoryList';
 
-const SearchBox = ({ handleSearch }: any) => {
+const SearchBox = ({ handleSearch, resetPageCount }: any) => {
   const handleEnterKey = (e: any) => {
     if (e.key === 'Enter') {
+      resetPageCount();
       handleSearch(e.target.value);
     }
   };
@@ -27,6 +29,7 @@ const SearchBox = ({ handleSearch }: any) => {
 
 const mapDispatchToProps = {
   handleSearch: setTerm,
+  resetPageCount: resetPage,
 };
 
 export default connect(null, mapDispatchToProps)(SearchBox);

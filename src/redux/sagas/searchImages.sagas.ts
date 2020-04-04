@@ -1,9 +1,6 @@
 import { takeLatest, put, call, select } from 'redux-saga/effects';
-import { imagesFailed } from '../actions/fetchImages';
-import {
-  searchImagesRequest,
-  searchImagesLoaded,
-} from '../actions/searchImages';
+import { imagesFailed, imagesRequested } from '../actions/fetchImages';
+import { searchImagesLoaded } from '../actions/searchImages';
 import pageSelector from '../selectors/pages-selectors';
 import { termSelector } from '../selectors/images-selectors';
 
@@ -15,13 +12,10 @@ async function fetchImagesData(page: any, term: any) {
 }
 
 function* searchImagesSagaWorker() {
-  yield put(searchImagesRequest());
+  yield put(imagesRequested());
   try {
     const page = yield select(pageSelector);
     const term = yield select(termSelector);
-    console.log(page);
-    console.log(term);
-
     const data = yield call(fetchImagesData, page, term);
     yield put(searchImagesLoaded(data));
   } catch (error) {
@@ -30,5 +24,5 @@ function* searchImagesSagaWorker() {
 }
 
 export default function* searchImagesSagaWatcher() {
-  yield takeLatest(['SEARCH_IMAGES'], searchImagesSagaWorker);
+  yield takeLatest(['SEARCH_IMAGES', 'SET_TERM'], searchImagesSagaWorker);
 }
