@@ -9,7 +9,6 @@ const tagsReducer = (state = INITIAL_STATE, action: any) => {
         ...state,
         tags: action.payload,
       };
-
     default:
       return state;
   }
