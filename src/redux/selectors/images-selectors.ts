@@ -27,7 +27,7 @@ const favoritesSelector = createSelector(
   (favoritesList) => favoritesList.favorites,
 );
 
-const imagePageSelector = (imageUrlParam: any) =>
+const imagePageSelector = (imageUrlParam: string) =>
   createSelector(
     [imagesSelector, searchResultsSelector],
     (imageList, searchResults) =>

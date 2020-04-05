@@ -1,12 +1,17 @@
 import _ from 'lodash';
+import {
+  SET_RELATED_IMAGES,
+  AppActions,
+  GET_RELATED_IMAGES,
+} from '../../types/actionTypes';
 
 const INITIAL_STATE = {
   relatedImages: [],
 };
 
-const relatedListReducer = (state = INITIAL_STATE, action: any) => {
+const relatedListReducer = (state = INITIAL_STATE, action: AppActions) => {
   switch (action.type) {
-    case 'SET_RELATED_IMAGES':
+    case SET_RELATED_IMAGES:
       return {
         ...state,
         relatedImages: _.uniqBy(
@@ -14,7 +19,7 @@ const relatedListReducer = (state = INITIAL_STATE, action: any) => {
           'id',
         ),
       };
-    case 'GET_RELATED_IMAGES':
+    case GET_RELATED_IMAGES:
       return {
         ...state,
         relatedImages: [],

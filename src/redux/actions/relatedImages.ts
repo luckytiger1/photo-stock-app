@@ -1,14 +1,20 @@
-const setRelatedImages = (images: any) => {
+import {
+  AppActions,
+  SET_RELATED_IMAGES,
+  GET_RELATED_IMAGES,
+} from '../../types/actionTypes';
+
+const setRelatedImages = (images: object[]): AppActions => {
   return {
-    type: 'SET_RELATED_IMAGES',
+    type: SET_RELATED_IMAGES,
     payload: images,
   };
 };
 
-const getRelatedImages = (id: any) => {
+const getRelatedImages = (images: object[]): AppActions => {
   return {
-    type: 'GET_RELATED_IMAGES',
-    payload: id,
+    type: GET_RELATED_IMAGES,
+    payload: images,
   };
 };
 

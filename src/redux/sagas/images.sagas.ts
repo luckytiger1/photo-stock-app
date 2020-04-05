@@ -5,8 +5,9 @@ import {
   imagesFailed,
 } from '../actions/fetchImages';
 import pageSelector from '../selectors/pages-selectors';
+import { FETCH_IMAGES } from '../../types/actionTypes';
 
-async function fetchImagesData(page: any) {
+async function fetchImagesData(page: number) {
   const url = `https://api.unsplash.com/photos/?client_id=i_zzFN2ObiV515beVlFT2zSqgPNUnS2nL9UZD9SqHj4&page=${page}&per_page=10`;
   const req = await fetch(url);
   const data = await req.json();
@@ -25,5 +26,5 @@ function* imagesSagaWorker() {
 }
 
 export default function* imagesSagaWatcher() {
-  yield takeEvery('FETCH_IMAGES', imagesSagaWorker);
+  yield takeEvery(FETCH_IMAGES, imagesSagaWorker);
 }

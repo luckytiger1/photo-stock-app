@@ -1,31 +1,20 @@
-const searchImagesRequest = () => {
-  return {
-    type: 'SEARCH_IMAGES_REQUEST',
-  };
-};
+import {
+  SEARCH_IMAGES_SUCCESS,
+  SEARCH_IMAGES,
+  AppActions,
+} from '../../types/actionTypes';
 
-const searchImagesLoaded = (newImages: any) => {
+const searchImagesLoaded = (newImages: object[]): AppActions => {
   return {
-    type: 'SEARCH_IMAGES_SUCCESS',
+    type: SEARCH_IMAGES_SUCCESS,
     payload: newImages,
   };
 };
-const searchImagesFailed = (error: any) => {
+
+const searchImages = (): AppActions => {
   return {
-    type: 'SEARCH_IMAGES_FAILURE',
-    payload: error,
+    type: SEARCH_IMAGES,
   };
 };
 
-const searchImages = () => {
-  return {
-    type: 'SEARCH_IMAGES',
-  };
-};
-
-export {
-  searchImagesRequest,
-  searchImagesLoaded,
-  searchImagesFailed,
-  searchImages,
-};
+export { searchImagesLoaded, searchImages };

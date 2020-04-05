@@ -1,4 +1,12 @@
 import _ from 'lodash';
+import {
+  FETCH_IMAGES_REQUEST,
+  FETCH_IMAGES_SUCCESS,
+  AppActions,
+  SEARCH_IMAGES_SUCCESS,
+  FETCH_IMAGES_FAILURE,
+  SET_TERM,
+} from '../../types/actionTypes';
 
 const INITIAL_STATE = {
   images: [],
@@ -9,15 +17,15 @@ const INITIAL_STATE = {
   searchHistory: [],
 };
 
-const updateImageList = (state = INITIAL_STATE, action: any) => {
+const updateImageList = (state = INITIAL_STATE, action: AppActions) => {
   switch (action.type) {
-    case 'FETCH_IMAGES_REQUEST':
+    case FETCH_IMAGES_REQUEST:
       return {
         ...state,
         error: null,
         loading: true,
       };
-    case 'FETCH_IMAGES_SUCCESS':
+    case FETCH_IMAGES_SUCCESS:
       return {
         ...state,
         error: null,
@@ -25,7 +33,7 @@ const updateImageList = (state = INITIAL_STATE, action: any) => {
         images: _.uniqBy([...state.images, ...action.payload], 'id'),
       };
 
-    case 'SEARCH_IMAGES_SUCCESS':
+    case SEARCH_IMAGES_SUCCESS:
       return {
         ...state,
         error: null,
@@ -36,14 +44,14 @@ const updateImageList = (state = INITIAL_STATE, action: any) => {
         ),
       };
 
-    case 'FETCH_IMAGES_FAILURE':
+    case FETCH_IMAGES_FAILURE:
       return {
         ...state,
         loading: false,
         error: action.payload,
       };
 
-    case 'SET_TERM':
+    case SET_TERM:
       return {
         ...state,
         loading: true,

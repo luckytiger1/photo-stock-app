@@ -1,11 +1,13 @@
-const advancePage = () => {
+import { ADVANCE_PAGE, RESET_PAGE, AppActions } from '../../types/actionTypes';
+
+const advancePage = (): AppActions => {
   return {
-    type: 'ADVANCE_PAGE',
+    type: ADVANCE_PAGE,
   };
 };
-const resetPage = () => {
+const resetPage = (): AppActions => {
   return {
-    type: 'RESET_PAGE',
+    type: RESET_PAGE,
   };
 };
 

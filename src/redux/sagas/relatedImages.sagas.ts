@@ -1,17 +1,19 @@
 import { takeEvery, put } from 'redux-saga/effects';
 import { setRelatedImages } from '../actions/relatedImages';
+import { GET_RELATED_IMAGES } from '../../types/actionTypes';
+
+type PayloadType = {
+  payload: object[];
+};
 
 function* relatedImagesSagasWorker({ payload }: any) {
   try {
     yield put(setRelatedImages(payload));
-    console.log(payload);
   } catch (error) {
     console.log(error);
   }
 }
 
 export default function* relatedImagesSagasWatcher() {
-  yield takeEvery('GET_RELATED_IMAGES', relatedImagesSagasWorker);
+  yield takeEvery(GET_RELATED_IMAGES, relatedImagesSagasWorker);
 }
-// const a = 2;
-// export default a;

@@ -3,8 +3,9 @@ import { imagesFailed, imagesRequested } from '../actions/fetchImages';
 import { searchImagesLoaded } from '../actions/searchImages';
 import pageSelector from '../selectors/pages-selectors';
 import { termSelector } from '../selectors/images-selectors';
+import { SEARCH_IMAGES, SET_TERM } from '../../types/actionTypes';
 
-async function fetchImagesData(page: any, term: any) {
+async function fetchImagesData(page: number, term: string) {
   const url = `https://api.unsplash.com/search/?client_id=i_zzFN2ObiV515beVlFT2zSqgPNUnS2nL9UZD9SqHj4&page=${page}&per_page=10&query=${term}`;
   const req = await fetch(url);
   const data = await req.json();
@@ -24,5 +25,5 @@ function* searchImagesSagaWorker() {
 }
 
 export default function* searchImagesSagaWatcher() {
-  yield takeLatest(['SEARCH_IMAGES', 'SET_TERM'], searchImagesSagaWorker);
+  yield takeLatest([SEARCH_IMAGES, SET_TERM], searchImagesSagaWorker);
 }
