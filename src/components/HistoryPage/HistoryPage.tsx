@@ -3,7 +3,7 @@ import './HistoryPage.scss';
 import HistoryList from '../HistoryList/HistoryList';
 import GalleryContainer from '../Gallery/GalleryContainer';
 
-export default function HistoryPage() {
+const HistoryPage = () => {
   return (
     <>
       <div className="history-page">
@@ -15,4 +15,6 @@ export default function HistoryPage() {
       <GalleryContainer />
     </>
   );
-}
+};
+
+export default HistoryPage;

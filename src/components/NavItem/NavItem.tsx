@@ -1,6 +1,20 @@
 import React from 'react';
 
-export default function NavItem({ isMobile, icon, alt, label, clsName }: any) {
+interface NavItemProps {
+  isMobile: boolean;
+  icon: string;
+  alt: string;
+  label: string;
+  clsName: string;
+}
+
+const NavItem: React.FC<NavItemProps> = ({
+  isMobile,
+  icon,
+  alt,
+  label,
+  clsName,
+}) => {
   return (
     <div className={`${clsName}`}>
       {isMobile ? (
@@ -17,4 +31,6 @@ export default function NavItem({ isMobile, icon, alt, label, clsName }: any) {
       )}
     </div>
   );
-}
+};
+
+export default NavItem;

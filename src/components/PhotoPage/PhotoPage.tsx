@@ -8,7 +8,33 @@ import DownloadBtn from '../DownloadBtn/DownloadBtn';
 import LikeBtn from '../LikeBtn/LikeBtn';
 import GalleryContainer from '../Gallery/GalleryContainer';
 
-const PhotoPage = ({ image, updateFavorites, toTitleCase, tags }: any) => {
+interface ImageType {
+  links: {
+    download: string;
+  };
+  urls: {
+    full: string;
+  };
+  user: any;
+}
+
+interface TagsType {
+  title: string;
+}
+
+interface PhotoPageProps {
+  image: ImageType;
+  updateFavorites: (image: object) => void;
+  toTitleCase: (str: string) => string;
+  tags: TagsType[];
+}
+
+const PhotoPage: React.FC<PhotoPageProps> = ({
+  image,
+  updateFavorites,
+  toTitleCase,
+  tags,
+}) => {
   const isMobile = useMediaQuery({ maxWidth: 550 });
   return (
     <div className="image-page__container">
@@ -49,7 +75,7 @@ const PhotoPage = ({ image, updateFavorites, toTitleCase, tags }: any) => {
         <div className="image-page__tags">
           <span className="title">Related tags</span>
           <div className="tags-container">
-            {tags.map((tag: any, index: any) => {
+            {tags.map((tag: TagsType, index: number) => {
               return (
                 <div className="tag-box" key={index.toString()}>
                   <span>{toTitleCase(tag.title)}</span>

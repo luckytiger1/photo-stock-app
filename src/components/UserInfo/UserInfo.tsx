@@ -1,7 +1,22 @@
 import React from 'react';
 import './UserInfo.scss';
 
-const UserInfo = ({ image }: any) => {
+export interface ImageUserType {
+  user: {
+    profile_image: {
+      small: string;
+    };
+    name: string;
+    instagram_username: string;
+    username: string;
+  };
+}
+
+export interface UserInfoProps {
+  image: ImageUserType;
+}
+
+const UserInfo: React.FC<UserInfoProps> = ({ image }) => {
   return (
     <div className="user-info">
       <img src={image.user.profile_image.small} alt="user-pic" />

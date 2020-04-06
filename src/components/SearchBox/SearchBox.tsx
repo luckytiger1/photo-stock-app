@@ -5,11 +5,19 @@ import { resetPage } from '../../redux/actions/advancePage';
 import './SearchBox.scss';
 import HistoryList from '../HistoryList/HistoryList';
 
-const SearchBox = ({ handleSearch, resetPageCount }: any) => {
-  const handleEnterKey = (e: any) => {
+interface SearchBoxProps {
+  handleSearch: (data: string) => void;
+  resetPageCount: () => void;
+}
+
+const SearchBox: React.FC<SearchBoxProps> = ({
+  handleSearch,
+  resetPageCount,
+}) => {
+  const handleEnterKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       resetPageCount();
-      handleSearch(e.target.value);
+      handleSearch((e.target as HTMLInputElement).value);
     }
   };
   return (
