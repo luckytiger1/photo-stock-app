@@ -3,7 +3,7 @@ import './HistoryPage.scss';
 import HistoryList from '../HistoryList/HistoryList';
 import GalleryContainer from '../Gallery/GalleryContainer';
 
-const HistoryPage = () => {
+const HistoryPage: React.FC = () => {
   return (
     <>
       <div className="history-page">
