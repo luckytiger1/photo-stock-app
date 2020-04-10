@@ -1,14 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import './HistoryList.scss';
-import { withRouter } from 'react-router-dom';
 
-interface HistoryListProps {
-  searchHistory: string[];
-  match: any;
-}
-
-const HistoryList: React.FC<HistoryListProps> = ({ searchHistory, match }) => {
+const HistoryList = ({ searchHistory, match }: any) => {
   return (
     <div className="history-list d-flex justify-content-around">
       <div
@@ -18,7 +10,7 @@ const HistoryList: React.FC<HistoryListProps> = ({ searchHistory, match }) => {
             : 'history-list-container-main'
         }
       >
-        {searchHistory.reverse().map((element: any, index: any) => {
+        {searchHistory.reverse().map((element: string, index: number) => {
           return (
             <span className="px-3 history-list-item" key={index.toString()}>
               {element}
@@ -30,10 +22,4 @@ const HistoryList: React.FC<HistoryListProps> = ({ searchHistory, match }) => {
   );
 };
 
-const mapStateToProps = ({ imageList: { searchHistory } }: any) => {
-  return {
-    searchHistory,
-  };
-};
-
-export default withRouter(connect(mapStateToProps)(HistoryList));
+export default HistoryList;

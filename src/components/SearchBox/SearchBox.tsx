@@ -1,25 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { setTerm } from '../../redux/actions/fetchImages';
-import { resetPage } from '../../redux/actions/advancePage';
-import './SearchBox.scss';
-import HistoryList from '../HistoryList/HistoryList';
+import HistoryListContainer from '../HistoryList/HistoryListContainer';
 
-interface SearchBoxProps {
-  handleSearch: (data: string) => void;
-  resetPageCount: () => void;
-}
-
-const SearchBox: React.FC<SearchBoxProps> = ({
-  handleSearch,
-  resetPageCount,
-}) => {
-  const handleEnterKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      resetPageCount();
-      handleSearch((e.target as HTMLInputElement).value);
-    }
-  };
+const SearchBox = ({ handleEnterKey }: any) => {
   return (
     <div className="search-box">
       <div className="input-field text-center ">
@@ -30,14 +12,9 @@ const SearchBox: React.FC<SearchBoxProps> = ({
           onKeyDown={handleEnterKey}
         />
       </div>
-      <HistoryList />
+      <HistoryListContainer />
     </div>
   );
 };
 
-const mapDispatchToProps = {
-  handleSearch: setTerm,
-  resetPageCount: resetPage,
-};
-
-export default connect(null, mapDispatchToProps)(SearchBox);
+export default SearchBox;

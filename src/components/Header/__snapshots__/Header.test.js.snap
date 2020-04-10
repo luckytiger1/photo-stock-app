@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders correctly if match.isExact is false 1`] = `
+<header
+  className="App-header d-flex justify-content-between py-4"
+>
+  <NavItem
+    alt="logo"
+    clsName="logo"
+    icon="unsplash.svg"
+    isMobile={false}
+    label="ImageStock"
+  />
+  <div
+    className="menu-container d-flex"
+  >
+    <Link
+      to="/"
+    >
+      <NavItem
+        alt="search-icon"
+        clsName="search"
+        icon="search-icon.svg"
+        isMobile={false}
+        label="Search"
+      />
+    </Link>
+    <Link
+      to="/favorites"
+    >
+      <NavItem
+        alt="history-icon"
+        clsName="favorite"
+        icon="favorite.svg"
+        isMobile={false}
+        label="Favorites"
+      />
+    </Link>
+    <Link
+      to="/history"
+    >
+      <NavItem
+        alt="history-icon"
+        clsName="search-history"
+        icon="history.svg"
+        isMobile={false}
+        label="Search history"
+      />
+    </Link>
+  </div>
+</header>
+`;
+
+exports[`<Header /> renders correctly if match.isExact is true 1`] = `
+<header
+  className="App-header d-flex justify-content-between py-4"
+>
+  <NavItem
+    alt="logo"
+    clsName="logo"
+    icon="unsplash.svg"
+    isMobile={false}
+    label="ImageStock"
+  />
+  <div
+    className="menu-container d-flex"
+  >
+    <Link
+      to="/favorites"
+    >
+      <NavItem
+        alt="history-icon"
+        clsName="favorite"
+        icon="favorite.svg"
+        isMobile={false}
+        label="Favorites"
+      />
+    </Link>
+    <Link
+      to="/history"
+    >
+      <NavItem
+        alt="history-icon"
+        clsName="search-history"
+        icon="history.svg"
+        isMobile={false}
+        label="Search history"
+      />
+    </Link>
+  </div>
+</header>
+`;

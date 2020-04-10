@@ -1,13 +1,9 @@
 import React, { lazy, Suspense } from 'react';
-import { hot } from 'react-hot-loader/root';
 import { Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Spinner from './components/Spinner/Spinner';
 
-const SearchBox = lazy(() => import('./components/SearchBox/SearchBox'));
-const GalleryContainer = lazy(() =>
-  import('./components/Gallery/GalleryContainer'),
-);
+const MainPage = lazy(() => import('./components/MainPage/MainPage'));
 const Favorites = lazy(() => import('./components/Favorites/Favorites'));
 const HistoryPage = lazy(() => import('./components/HistoryPage/HistoryPage'));
 const PhotoPageContainer = lazy(() =>
@@ -20,16 +16,7 @@ const App = () => {
       <Suspense fallback={<Spinner />}>
         <Header />
         <Switch>
-          <Route
-            exact
-            path="/"
-            component={() => (
-              <>
-                <SearchBox />
-                <GalleryContainer />
-              </>
-            )}
-          />
+          <Route exact path="/" component={MainPage} />
           <Route path="/favorites" component={Favorites} />
           <Route path="/history" component={HistoryPage} />
           <Route path="/:photoId" component={PhotoPageContainer} />
@@ -39,4 +26,4 @@ const App = () => {
   );
 };
 
-export default hot(App);
+export default App;

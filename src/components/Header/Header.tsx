@@ -8,7 +8,11 @@ import historyIcon from './assets/history.svg';
 import searchIcon from './assets/search-icon.svg';
 import NavItem from '../NavItem/NavItem';
 
-const Header = ({ match }: any) => {
+interface HeaderProps {
+  match: any;
+}
+
+export const Header: React.FC<HeaderProps> = ({ match }) => {
   const isMobile = useMediaQuery({ maxWidth: 550 });
   return (
     <header className="App-header d-flex justify-content-between py-4">

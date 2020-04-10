@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBox /> renders correctly 1`] = `
+<div
+  className="search-box"
+>
+  <div
+    className="input-field text-center "
+  >
+    <input
+      id="search-input"
+      onKeyDown={[MockFunction]}
+      placeholder="Search"
+      type="text"
+    />
+  </div>
+  <withRouter(Connect(HistoryListContainer)) />
+</div>
+`;

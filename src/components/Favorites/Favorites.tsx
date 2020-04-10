@@ -6,11 +6,11 @@ const Favorites: React.FC = () => {
   return (
     <div className="favorites-container">
       <div className="favorites-title">
-        <h2 className=" text-center">Favorites</h2>
+        <h2 className="text-center">Favorites</h2>
       </div>
       <GalleryContainer />
     </div>
   );
 };
 
-export default Favorites;
+export default React.memo(Favorites);

@@ -1,6 +1,6 @@
 import React from 'react';
 import './HistoryPage.scss';
-import HistoryList from '../HistoryList/HistoryList';
+import HistoryListContainer from '../HistoryList/HistoryListContainer';
 import GalleryContainer from '../Gallery/GalleryContainer';
 
 const HistoryPage: React.FC = () => {
@@ -10,7 +10,7 @@ const HistoryPage: React.FC = () => {
         <div className="history-page__title">
           <h2>Your requests</h2>
         </div>
-        <HistoryList />
+        <HistoryListContainer />
       </div>
       <GalleryContainer />
     </>

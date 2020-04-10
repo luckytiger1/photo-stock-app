@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Favorites /> renders correctly 1`] = `
+<div
+  className="favorites-container"
+>
+  <div
+    className="favorites-title"
+  >
+    <h2
+      className="text-center"
+    >
+      Favorites
+    </h2>
+  </div>
+  <withRouter(Connect(GalleryContainer)) />
+</div>
+`;
