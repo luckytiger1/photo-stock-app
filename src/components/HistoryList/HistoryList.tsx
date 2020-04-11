@@ -1,6 +1,11 @@
 import React from 'react';
 
-const HistoryList = ({ searchHistory, match }: any) => {
+interface HistoryListProps {
+  searchHistory: string[];
+  match: any;
+}
+
+const HistoryList: React.FC<HistoryListProps> = ({ searchHistory, match }) => {
   return (
     <div className="history-list d-flex justify-content-around">
       <div

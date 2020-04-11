@@ -6,7 +6,7 @@ import downloadBtnIcon from './assets/download-btn.svg';
 import downloadBtnMobile from './assets/download-mobile.svg';
 import DownloadBtn from '../DownloadBtn/DownloadBtn';
 import LikeBtn from '../LikeBtn/LikeBtn';
-import GalleryContainer from '../Gallery/GalleryContainer';
+import ConnectedGalleryContainer from '../Gallery/GalleryContainer';
 
 interface ImageType {
   links: {
@@ -86,7 +86,7 @@ const PhotoPage: React.FC<PhotoPageProps> = ({
         </div>
       </div>
       <div className="image-page__body">
-        <GalleryContainer />
+        <ConnectedGalleryContainer />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/Header';
 import Spinner from './components/Spinner/Spinner';
 
 const MainPage = lazy(() => import('./components/MainPage/MainPage'));
@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div className="App ">
       <Suspense fallback={<Spinner />}>
-        <Header />
+        <HeaderContainer />
         <Switch>
           <Route exact path="/" component={MainPage} />
           <Route path="/favorites" component={Favorites} />

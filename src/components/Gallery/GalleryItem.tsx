@@ -7,7 +7,12 @@ import UserInfo from '../UserInfo/UserInfo';
 import DownloadBtn from '../DownloadBtn/DownloadBtn';
 import LikeBtn from '../LikeBtn/LikeBtn';
 
-const GalleryItem = ({ image, updateFavorites, history, match }: any) => {
+export const GalleryItem = ({
+  image,
+  updateFavorites,
+  history,
+  match,
+}: any) => {
   return (
     <div className="photo-item" key={image.id}>
       <img

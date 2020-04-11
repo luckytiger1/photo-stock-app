@@ -3,7 +3,7 @@ import { createSelector } from 'reselect';
 const tagsListSelector = (state: any) => state.tagsList;
 
 const tagsSelector = createSelector(
-  [tagsListSelector],
+  tagsListSelector,
   (tagsList) => tagsList.tags,
 );
 

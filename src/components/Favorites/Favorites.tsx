@@ -1,6 +1,6 @@
 import React from 'react';
-import './Favorites.scss';
 import GalleryContainer from '../Gallery/GalleryContainer';
+import './Favorites.scss';
 
 const Favorites: React.FC = () => {
   return (

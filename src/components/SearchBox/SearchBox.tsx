@@ -1,7 +1,11 @@
 import React from 'react';
 import HistoryListContainer from '../HistoryList/HistoryListContainer';
 
-const SearchBox = ({ handleEnterKey }: any) => {
+interface SearchBoxProps {
+  handleEnterKey: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+}
+
+const SearchBox: React.FC<SearchBoxProps> = ({ handleEnterKey }) => {
   return (
     <div className="search-box">
       <div className="input-field text-center ">

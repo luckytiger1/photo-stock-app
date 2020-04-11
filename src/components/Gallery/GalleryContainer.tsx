@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 import './Gallery.scss';
-import { fetchImages, addToFavorites } from '../../redux/actions/fetchImages';
+import { fetchImages } from '../../redux/actions/fetchImages';
+import addToFavorites from '../../redux/actions/favorites';
 import { advancePage } from '../../redux/actions/advancePage';
 import {
   imagesSelector,
@@ -28,7 +29,7 @@ interface GalleryContainerProps extends GalleryProps {
   favorites: () => object[];
 }
 
-const GalleryContainer = ({
+export const GalleryContainer = ({
   images,
   page,
   term,

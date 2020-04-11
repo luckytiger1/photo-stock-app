@@ -14,6 +14,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ match }) => {
   const isMobile = useMediaQuery({ maxWidth: 550 });
+
   return (
     <header className="App-header d-flex justify-content-between py-4">
       <NavItem

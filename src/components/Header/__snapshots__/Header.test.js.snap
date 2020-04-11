@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header /> renders correctly if match.isExact is false 1`] = `
+exports[`Header component <Header /> renders correctly <Header /> renders correctly if match.isExact is false 1`] = `
 <header
   className="App-header d-flex justify-content-between py-4"
 >
@@ -51,7 +51,7 @@ exports[`<Header /> renders correctly if match.isExact is false 1`] = `
 </header>
 `;
 
-exports[`<Header /> renders correctly if match.isExact is true 1`] = `
+exports[`Header component <Header /> renders correctly <Header /> renders correctly if match.isExact is true 1`] = `
 <header
   className="App-header d-flex justify-content-between py-4"
 >

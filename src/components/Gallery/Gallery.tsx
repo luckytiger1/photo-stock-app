@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import _ from 'lodash';
-import GalleryItem from './GalleryItem';
+import ConnectedGalleryItem from './GalleryItem';
 import noResultsImg from './assets/no-results.png';
 import useInfiniteScroll from './customHooks';
 import Spinner from '../Spinner/Spinner';
@@ -66,7 +66,7 @@ const Gallery = ({
           )}
           {results.map((image: any) => {
             return (
-              <GalleryItem
+              <ConnectedGalleryItem
                 image={image}
                 updateFavorites={updateFavorites}
                 key={image.id}

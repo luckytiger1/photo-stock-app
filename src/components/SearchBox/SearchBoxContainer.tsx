@@ -10,7 +10,7 @@ interface SearchBoxContainerProps {
   resetPageCount: () => void;
 }
 
-const SearchBoxContainer: React.FC<SearchBoxContainerProps> = ({
+export const SearchBoxContainer: React.FC<SearchBoxContainerProps> = ({
   handleSearch,
   resetPageCount,
 }) => {

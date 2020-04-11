@@ -4,7 +4,6 @@ import {
   FETCH_IMAGES_SUCCESS,
   AppActions,
   FETCH_IMAGES_FAILURE,
-  ADD_TO_FAVORITES,
   FETCH_IMAGES,
 } from '../../types/actionTypes';
 
@@ -35,24 +34,10 @@ const setTerm = (term: string): AppActions => {
   };
 };
 
-const addToFavorites = (image: object): AppActions => {
-  return {
-    type: ADD_TO_FAVORITES,
-    payload: image,
-  };
-};
-
 const fetchImages = (): AppActions => {
   return {
     type: FETCH_IMAGES,
   };
 };
 
-export {
-  imagesRequested,
-  imagesLoaded,
-  imagesFailed,
-  fetchImages,
-  setTerm,
-  addToFavorites,
-};
+export { imagesRequested, imagesLoaded, imagesFailed, fetchImages, setTerm };

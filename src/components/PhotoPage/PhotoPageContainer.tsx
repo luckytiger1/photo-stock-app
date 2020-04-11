@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import './PhotoPage.scss';
 import { imagePageSelector } from '../../redux/selectors/images-selectors';
-import { addToFavorites } from '../../redux/actions/fetchImages';
+import addToFavorites from '../../redux/actions/favorites';
 import PhotoPage from './PhotoPage';
 import { getTags } from '../../redux/actions/tags';
 import tagsSelector from '../../redux/selectors/tags-selectors';

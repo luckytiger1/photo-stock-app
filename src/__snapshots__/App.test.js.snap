@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Favorites /> renders correctly 1`] = `
+<div
+  className="App "
+>
+  <Suspense
+    fallback={<Spinner />}
+  >
+    <withRouter(Header) />
+    <Switch>
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_ctor": [Function],
+            "_result": null,
+            "_status": -1,
+          }
+        }
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_ctor": [Function],
+            "_result": null,
+            "_status": -1,
+          }
+        }
+        path="/favorites"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_ctor": [Function],
+            "_result": null,
+            "_status": -1,
+          }
+        }
+        path="/history"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_ctor": [Function],
+            "_result": null,
+            "_status": -1,
+          }
+        }
+        path="/:photoId"
+      />
+    </Switch>
+  </Suspense>
+</div>
+`;
