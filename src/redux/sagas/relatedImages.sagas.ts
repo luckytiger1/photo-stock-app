@@ -6,12 +6,8 @@ type PayloadType = {
   payload: object[];
 };
 
-function* relatedImagesSagasWorker({ payload }: any) {
-  try {
-    yield put(setRelatedImages(payload));
-  } catch (error) {
-    console.log(error);
-  }
+export function* relatedImagesSagasWorker({ payload }: any) {
+  yield put(setRelatedImages(payload));
 }
 
 export default function* relatedImagesSagasWatcher() {

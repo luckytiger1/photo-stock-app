@@ -1,12 +1,12 @@
 import React from 'react';
-import SearchBoxContainer from '../SearchBox/SearchBoxContainer';
-import GalleryContainer from '../Gallery/GalleryContainer';
+import ConnectedSearchBoxContainer from '../SearchBox/SearchBoxContainer';
+import ConnectedGalleryContainer from '../Gallery/GalleryContainer';
 
 const MainPage = () => {
   return (
     <div>
-      <SearchBoxContainer />
-      <GalleryContainer />
+      <ConnectedSearchBoxContainer />
+      <ConnectedGalleryContainer />
     </div>
   );
 };
