@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HistoryPage /> renders correctly 1`] = `
+<Fragment>
+  <div
+    className="history-page"
+  >
+    <div
+      className="history-page__title"
+    >
+      <h2>
+        Your requests
+      </h2>
+    </div>
+    <withRouter(Connect(HistoryListContainer)) />
+  </div>
+  <withRouter(Connect(GalleryContainer)) />
+</Fragment>
+`;

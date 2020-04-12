@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LikeBtn /> renders correctly 1`] = `
+<button
+  type="button"
+>
+  <img
+    alt="like"
+  />
+</button>
+`;

@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GalleryItem <GalleryItem /> doesn't render all info if match path is photoId 1`] = `
+<div
+  className="photo-item"
+  key="Shj3j4"
+>
+  <img
+    className="photo-item__img"
+    src="image.png"
+  />
+</div>
+`;
+
+exports[`GalleryItem <GalleryItem /> renders all info if match path is not photoId 1`] = `
+<div
+  className="photo-item"
+  key="Shj3j4"
+>
+  <img
+    className="photo-item__img"
+    src="image.png"
+  />
+  <UserInfo
+    image={
+      Object {
+        "id": "Shj3j4",
+        "links": Object {
+          "download": "downloadImg.com",
+        },
+        "urls": Object {
+          "small": "image.png",
+        },
+      }
+    }
+  />
+  <div
+    className="photo-item__info"
+  >
+    <LikeBtn
+      addToFavorites={[Function]}
+      icon="heart.svg"
+      itemClass="info__btn"
+    />
+    <button
+      className="info__btn"
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="resize"
+        src="resize.svg"
+      />
+    </button>
+    <DownloadBtn
+      icon="download.svg"
+      itemClass="info__btn"
+      link="downloadImg.com"
+    />
+  </div>
+</div>
+`;

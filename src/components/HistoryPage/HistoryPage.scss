@@ -1,0 +1,15 @@
+.history-page {
+  background-color: black;
+  font-family: 'SF UI Display Light';
+
+  &__title {
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+    }
+  }
+}

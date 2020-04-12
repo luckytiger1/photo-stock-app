@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserInfo /> renders correctly 1`] = `
+<div
+  className="user-info"
+>
+  <img
+    alt="user-pic"
+    src="image.jpg"
+  />
+  <div
+    className="user-info__text"
+  >
+    <span
+      className="user-name"
+    >
+      Dan
+    </span>
+    <span
+      className="user-instagram"
+    >
+      @
+      DanS
+    </span>
+  </div>
+</div>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GalleryContainer renders correctly 1`] = `
+<Gallery
+  match={
+    Object {
+      "path": "/favorites",
+    }
+  }
+/>
+`;

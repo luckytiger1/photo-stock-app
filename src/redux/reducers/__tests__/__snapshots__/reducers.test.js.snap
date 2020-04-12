@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rootReducer should initialize correctly 1`] = `
+Object {
+  "favoritesList": Object {
+    "favorites": Array [],
+  },
+  "imageList": Object {
+    "error": null,
+    "images": Array [],
+    "loading": true,
+    "searchHistory": Array [],
+    "searchResults": Array [],
+    "term": "",
+  },
+  "pages": Object {
+    "page": 1,
+  },
+  "relatedList": Object {
+    "relatedImages": Array [],
+  },
+  "tagsList": Object {
+    "tags": Array [],
+  },
+}
+`;
