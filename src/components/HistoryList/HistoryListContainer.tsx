@@ -9,6 +9,12 @@ interface HistoryListContainerProps {
   match: any;
 }
 
+type ImageListType = {
+  imageList: {
+    searchHistory: string[];
+  };
+};
+
 const HistoryListContainer: React.FC<HistoryListContainerProps> = ({
   searchHistory,
   match,
@@ -16,7 +22,7 @@ const HistoryListContainer: React.FC<HistoryListContainerProps> = ({
   return <HistoryList searchHistory={searchHistory} match={match} />;
 };
 
-const mapStateToProps = ({ imageList: { searchHistory } }: any) => {
+const mapStateToProps = ({ imageList: { searchHistory } }: ImageListType) => {
   return {
     searchHistory,
   };

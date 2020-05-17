@@ -4,12 +4,16 @@ import {
   AppActions,
   GET_RELATED_IMAGES,
 } from '../../types/actionTypes';
+import { RelatedListStateType } from './types/types';
 
-const INITIAL_STATE = {
+const INITIAL_STATE: RelatedListStateType = {
   relatedImages: [],
 };
 
-const relatedListReducer = (state = INITIAL_STATE, action: AppActions) => {
+const relatedListReducer = (
+  state = INITIAL_STATE,
+  action: AppActions,
+): RelatedListStateType => {
   switch (action.type) {
     case SET_RELATED_IMAGES:
       return {

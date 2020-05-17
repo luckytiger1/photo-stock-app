@@ -10,7 +10,7 @@ const PhotoPageContainer = lazy(() =>
   import('./components/PhotoPage/PhotoPageContainer'),
 );
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <div className="App ">
       <Suspense fallback={<Spinner />}>

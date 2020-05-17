@@ -1,5 +1,5 @@
 import React from 'react';
-import GalleryContainer from '../Gallery/GalleryContainer';
+import GalleryContainerWithRouter from '../Gallery/GalleryContainer';
 import './Favorites.scss';
 
 const Favorites: React.FC = () => {
@@ -8,7 +8,7 @@ const Favorites: React.FC = () => {
       <div className="favorites-title">
         <h2 className="text-center">Favorites</h2>
       </div>
-      <GalleryContainer />
+      <GalleryContainerWithRouter />
     </div>
   );
 };

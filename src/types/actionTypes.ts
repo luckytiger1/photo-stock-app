@@ -1,3 +1,5 @@
+import { Action } from 'redux';
+
 export const ADVANCE_PAGE = 'ADVANCE_PAGE';
 export const RESET_PAGE = 'RESET_PAGE';
 export const FETCH_IMAGES_REQUEST = 'FETCH_IMAGES_REQUEST';
@@ -13,56 +15,56 @@ export const SEARCH_IMAGES = 'SEARCH_IMAGES';
 export const SET_TAGS = 'SET_TAGS';
 export const GET_TAGS = 'GET_TAGS';
 
-interface AdvancePageAction {
+interface AdvancePageAction extends Action {
   type: typeof ADVANCE_PAGE;
 }
 
-interface ResetPageAction {
+interface ResetPageAction extends Action {
   type: typeof RESET_PAGE;
 }
 
-interface ImagesRequestedAction {
+interface ImagesRequestedAction extends Action {
   type: typeof FETCH_IMAGES_REQUEST;
 }
-interface ImagesLoadedAction {
+interface ImagesLoadedAction extends Action {
   type: typeof FETCH_IMAGES_SUCCESS;
   payload: object[];
 }
-interface ImagesFailedAction {
+interface ImagesFailedAction extends Action {
   type: typeof FETCH_IMAGES_FAILURE;
   payload: Error;
 }
-interface SetTermAction {
+interface SetTermAction extends Action {
   type: typeof SET_TERM;
   payload: string;
 }
-interface AddToFavoritesAction {
+interface AddToFavoritesAction extends Action {
   type: typeof ADD_TO_FAVORITES;
   payload: object;
 }
-interface FetchImagesAction {
+interface FetchImagesAction extends Action {
   type: typeof FETCH_IMAGES;
 }
-interface SetRelatedImagesAction {
+interface SetRelatedImagesAction extends Action {
   type: typeof SET_RELATED_IMAGES;
   payload: object[];
 }
-interface GetRelatedImagesAction {
+interface GetRelatedImagesAction extends Action {
   type: typeof GET_RELATED_IMAGES;
   payload: object[];
 }
-interface SearchImagesLoadedAction {
+interface SearchImagesLoadedAction extends Action {
   type: typeof SEARCH_IMAGES_SUCCESS;
   payload: object[];
 }
-interface SearchImagesAction {
+interface SearchImagesAction extends Action {
   type: typeof SEARCH_IMAGES;
 }
-interface SetTagsAction {
+interface SetTagsAction extends Action {
   type: typeof SET_TAGS;
   payload: string[];
 }
-interface GetTagsAction {
+interface GetTagsAction extends Action {
   type: typeof GET_TAGS;
   payload: string;
 }

@@ -6,3 +6,4 @@ packages/react-scripts/fixtures
 fixtures/
 config
 postcss.config.js
+server.js

@@ -1,10 +1,14 @@
 import { AppActions, SET_TAGS } from '../../types/actionTypes';
+import { TagsStateType } from './types/types';
 
-const INITIAL_STATE = {
+const INITIAL_STATE: TagsStateType = {
   tags: [],
 };
 
-const tagsReducer = (state = INITIAL_STATE, action: AppActions) => {
+const tagsReducer = (
+  state = INITIAL_STATE,
+  action: AppActions,
+): TagsStateType => {
   switch (action.type) {
     case SET_TAGS:
       return {
