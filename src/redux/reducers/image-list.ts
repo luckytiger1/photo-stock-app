@@ -7,8 +7,9 @@ import {
   FETCH_IMAGES_FAILURE,
   SET_TERM,
 } from '../../types/actionTypes';
+import { ImageListStateType } from './types/ImageListStateType';
 
-const INITIAL_STATE = {
+const INITIAL_STATE: ImageListStateType = {
   images: [],
   loading: true,
   error: null,
@@ -17,7 +18,10 @@ const INITIAL_STATE = {
   searchHistory: [],
 };
 
-const updateImageList = (state = INITIAL_STATE, action: AppActions) => {
+const updateImageList = (
+  state = INITIAL_STATE,
+  action: AppActions,
+): ImageListStateType => {
   switch (action.type) {
     case FETCH_IMAGES_REQUEST:
       return {

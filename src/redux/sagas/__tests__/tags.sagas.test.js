@@ -58,6 +58,7 @@ describe('Scenario 2: The API is broken and throws an exception', () => {
     expect(result).toEqual(call(fetchTags, 'hsd3jS'));
     return new Error('Something went wrong');
   });
+
   it('and then trigger an error action with the error message', (result) => {
     expect(result).toEqual(
       put(imagesFailed(new Error('Something went wrong'))),

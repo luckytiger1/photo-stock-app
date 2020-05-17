@@ -1,7 +1,8 @@
 import { createSelector } from 'reselect';
+import { AppState } from '../reducers/types/types';
 
-const imageListSelector = (state: any) => state.imageList;
-const favoritesListSelector = (state: any) => state.favoritesList;
+const imageListSelector = (state: AppState) => state.imageList;
+const favoritesListSelector = (state: AppState) => state.favoritesList;
 
 const imagesSelector = createSelector(
   [imageListSelector],

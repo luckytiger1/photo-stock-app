@@ -1,6 +1,5 @@
 import sagaHelper from 'redux-saga-testing';
 import { put } from 'redux-saga/effects';
-
 import { relatedImagesSagasWorker } from '../relatedImages.sagas';
 import { setRelatedImages } from '../../actions/relatedImages';
 

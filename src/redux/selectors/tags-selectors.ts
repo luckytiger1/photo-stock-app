@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect';
+import { AppState } from '../reducers/types/types';
 
-const tagsListSelector = (state: any) => state.tagsList;
+const tagsListSelector = (state: AppState) => state.tagsList;
 
 const tagsSelector = createSelector(
   tagsListSelector,

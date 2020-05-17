@@ -1,7 +1,7 @@
 import React from 'react';
 import './HistoryPage.scss';
 import HistoryListContainer from '../HistoryList/HistoryListContainer';
-import GalleryContainer from '../Gallery/GalleryContainer';
+import GalleryContainerWithRouter from '../Gallery/GalleryContainer';
 
 const HistoryPage: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const HistoryPage: React.FC = () => {
         </div>
         <HistoryListContainer />
       </div>
-      <GalleryContainer />
+      <GalleryContainerWithRouter />
     </>
   );
 };
