@@ -17,6 +17,7 @@ import pageSelector from '../../redux/selectors/pages-selectors';
 import { searchImages } from '../../redux/actions/searchImages';
 import Gallery, { GalleryProps } from './Gallery';
 import relatedImagesSelector from '../../redux/selectors/relatedImages-selectors';
+import { AppState } from '../../redux/reducers/types/types';
 
 interface GalleryContainerProps extends GalleryProps {
   images: object[];
@@ -72,7 +73,7 @@ export const GalleryContainer = ({
   );
 };
 
-const mapStateToProps = createStructuredSelector({
+const mapStateToProps = createStructuredSelector<AppState, any>({
   images: imagesSelector,
   page: pageSelector,
   searchResults: searchResultsSelector,

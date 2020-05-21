@@ -7,7 +7,7 @@ import {
   FETCH_IMAGES_FAILURE,
   SET_TERM,
 } from '../../types/actionTypes';
-import { ImageListStateType } from './types/ImageListStateType';
+import { ImageListStateType } from './types/types';
 
 const INITIAL_STATE: ImageListStateType = {
   images: [],
