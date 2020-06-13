@@ -6,6 +6,14 @@ const INITIAL_STATE: FavoritesListStateType = {
   favorites: [],
 };
 
+const updateFavorites = (image: any, favoritesList: any) => {
+  if (favoritesList.includes(image)) {
+    return favoritesList.filter((element: any) => element !== image);
+  }
+
+  return _.uniqBy([...favoritesList, image], 'id');
+};
+
 const favoritesListReducer = (
   state = INITIAL_STATE,
   action: AppActions,
@@ -14,7 +22,7 @@ const favoritesListReducer = (
     case ADD_TO_FAVORITES:
       return {
         ...state,
-        favorites: _.uniqBy([...state.favorites, action.payload], 'id'),
+        favorites: updateFavorites(action.payload, state.favorites),
       };
     default:
       return state;

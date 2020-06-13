@@ -26,6 +26,7 @@ const Gallery = ({
   updateFavorites,
   match,
   page,
+  favorites,
 }: any) => {
   const bottomBoundaryRef = useRef(null);
   useInfiniteScroll(bottomBoundaryRef, advancePage);
@@ -70,6 +71,7 @@ const Gallery = ({
                 image={image}
                 updateFavorites={updateFavorites}
                 key={image.id}
+                favorites={favorites}
               />
             );
           })}

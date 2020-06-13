@@ -69,6 +69,7 @@ export const GalleryContainer = ({
       updateFavorites={updateFavorites}
       match={match}
       page={page}
+      favorites={favorites}
     />
   );
 };

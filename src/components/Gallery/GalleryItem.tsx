@@ -1,7 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import downloadIcon from './assets/download.svg';
-import heartIcon from './assets/heart.svg';
+import heartIconPressed from './assets/heart.svg';
+import heartIconUnPressed from './assets/likebtn_withborder.svg';
 import resizeIcon from './assets/resize.svg';
 import UserInfo from '../UserInfo/UserInfo';
 import DownloadBtn from '../DownloadBtn/DownloadBtn';
@@ -12,6 +13,7 @@ export const GalleryItem = ({
   updateFavorites,
   history,
   match,
+  favorites,
 }: any) => {
   return (
     <div className="photo-item" key={image.id}>
@@ -26,7 +28,11 @@ export const GalleryItem = ({
           <div className="photo-item__info">
             <LikeBtn
               itemClass="info__btn"
-              icon={heartIcon}
+              icon={
+                favorites.find((el: any) => el === image)
+                  ? heartIconPressed
+                  : heartIconUnPressed
+              }
               addToFavorites={() => updateFavorites(image)}
             />
 
