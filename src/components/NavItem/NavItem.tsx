@@ -26,7 +26,11 @@ const NavItem: React.FC<NavItemProps> = ({
             alt={alt}
             className={clsName === 'logo' ? 'logo-icon' : undefined}
           />
-          <span className={`${clsName}-text`}>{label}</span>
+          {label === 'ImageStock' ? (
+            <h1 className={`${clsName}-text`}>{label}</h1>
+          ) : (
+            <span className={`${clsName}-text`}>{label}</span>
+          )}
         </>
       )}
     </div>

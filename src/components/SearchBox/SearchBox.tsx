@@ -9,12 +9,14 @@ const SearchBox: React.FC<SearchBoxProps> = ({ handleEnterKey }) => {
   return (
     <div className="search-box">
       <div className="input-field text-center ">
-        <input
-          type="text"
-          placeholder="Search"
-          id="search-input"
-          onKeyDown={handleEnterKey}
-        />
+        <label htmlFor="search-input">
+          <input
+            type="text"
+            placeholder="Search"
+            id="search-input"
+            onKeyDown={handleEnterKey}
+          />
+        </label>
       </div>
       <HistoryListContainer />
     </div>

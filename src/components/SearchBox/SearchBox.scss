@@ -4,6 +4,7 @@
   font-weight: normal;
   src: local('SF UI Display Light'),
     url('sf-ui-display-light-58646b33e0551.woff') format('woff');
+  font-display: swap;
 }
 
 .search-box {
@@ -22,16 +23,21 @@
     )
     0 0 100% 0/0 0 1px 0 stretch;
   margin-bottom: 30px;
+
+  label[for='search-input'] {
+    visibility: hidden;
+  }
 }
 
 #search-input {
+  visibility: visible;
   border: none;
   max-width: 700px;
   min-width: 350px;
   text-align: center;
   padding: 0 15px;
   margin-bottom: 4px;
-  font-family: 'SF UI Display Light';
+  font-family: 'SF UI Display Light', Helvetica, sans-serif;
   font-size: 2rem;
   background-color: black;
   line-height: 60px;

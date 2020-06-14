@@ -15,10 +15,43 @@ export const GalleryItem = ({
   match,
   favorites,
 }: any) => {
+  const createSrcSet = (url: string) => {
+    const widths = [
+      100,
+      200,
+      300,
+      400,
+      500,
+      600,
+      700,
+      800,
+      900,
+      1000,
+      1100,
+      1200,
+      1296,
+      1400,
+      1600,
+      1800,
+      2000,
+      2200,
+      2400,
+      2592,
+    ];
+    const srcSetData = widths.reduce(
+      (acc: string, width: number) =>
+        `${acc} ${url}&auto=format&fit=crop&w=${width}&q=60 ${width}w,`,
+      '',
+    );
+    return srcSetData.slice(0, srcSetData.length - 1);
+  };
+
   return (
     <div className="photo-item" key={image.id}>
       <img
-        src={image.urls.small}
+        sizes="(min-width: 1335px) 416px, (min-width: 992px) calc(calc(100vw - 72px) / 3), (min-width: 768px) calc(calc(100vw - 48px) / 2), 100vw"
+        srcSet={createSrcSet(image.urls.raw)}
+        src={`${image.urls.raw}&w=1000&q=80`}
         alt={image.alt_description && 'stock-img'}
         className="photo-item__img"
       />
