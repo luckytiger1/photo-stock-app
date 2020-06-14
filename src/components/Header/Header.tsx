@@ -17,13 +17,15 @@ export const Header: React.FC<HeaderProps> = ({ match }) => {
 
   return (
     <header className="App-header d-flex justify-content-between py-4">
-      <NavItem
-        isMobile={isMobile}
-        clsName="logo"
-        alt="logo"
-        icon={logo}
-        label="ImageStock"
-      />
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <NavItem
+          isMobile={isMobile}
+          clsName="logo"
+          alt="logo"
+          icon={logo}
+          label="ImageStock"
+        />
+      </Link>
 
       <div className="menu-container d-flex">
         {!match.isExact && (
